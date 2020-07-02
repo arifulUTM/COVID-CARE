@@ -4,6 +4,7 @@
         <title> COVID CARE</title>
     </head>
 <style>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat');
 * {
   margin: 0;
   padding: 0;
@@ -34,24 +35,30 @@ body {
   opacity: 0;
   transition: opacity 0.75s ease-in-out;
 }
-.start .start-header{
+.write .write-header{
 border-radius: 2rem;
   padding: 4rem 2.5rem;
   background-color: rgba(0,0,0,0.5);
 }
-.start h1{
+.write h1{
     font-size: 4rem;
   margin-bottom: 0.75rem;
 }
-.start p{
+.write p{
     font-size: 1.75rem;
+}
+@media (max-width: 700px) {
+  html { font-size: 12px; }
+  .write { padding: 1.5rem 2rem; }
+  .write h1 { font-size: 2.5rem; }
+  .write p { font-size: 1.25rem; }
 }
 </style>
     <body>
 
 <header class="start">
     <div class="side">
-        <button> </button>
+        <button> Health tips</button>
     </div>
 
     <div class="slideshow">
@@ -67,6 +74,23 @@ border-radius: 2rem;
 
 
 
-</header>        
+</header>       
+<script>
+    const slideshow = document.querySelectorAll(".slideshow img");
+    const nextImageDelay = 5000;
+    let currentImageCounter = 0; // set a variable to keep track of the current image 
+    // slideshow[currentImageCounter].style.display = "block";
+    slideshow[currentImageCounter].style.opacity = 1;
+    setInterval(nextImage, nextImageDelay);
+    function nextImage() {
+  // slideshow[currentImageCounter].style.display = "none";
+  slideshow[currentImageCounter].style.opacity = 0;
+
+  currentImageCounter = (currentImageCounter+1) % slideshow.length;
+
+  // slideshowImages[currentImageCounter].style.display = "block";
+  slideshow[currentImageCounter].style.opacity = 1;
+}
+</script> 
     </body>
 </html>
