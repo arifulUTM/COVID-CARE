@@ -3,7 +3,50 @@
     <head>
         <title> COVID CARE</title>
     </head>
-
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+.start{
+    height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1rem;
+}
+.slideshow img{
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+  z-index:-1;
+  opacity: 0;
+  transition: opacity 0.75s ease-in-out;
+}
+.start .start-header{
+border-radius: 2rem;
+  padding: 4rem 2.5rem;
+  background-color: rgba(0,0,0,0.5);
+}
+.start h1{
+    font-size: 4rem;
+  margin-bottom: 0.75rem;
+}
+.start p{
+    font-size: 1.75rem;
+}
+</style>
     <body>
 
 <header class="start">
