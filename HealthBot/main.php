@@ -1,3 +1,6 @@
+
+<?php include "db.php"; ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -87,6 +90,16 @@ div.click {
             <center><h2>Health Tips Bot</h2></center>
             </div>
             <br/>
+            <?php 
+    $query="select * from chats ORDER by date DESC";
+    $res=mysqli_query($con,$query);
+    while($data=mysqli_fetch_array($res)){
+      $user=$data['user'];
+      $healthbot=$data['healthbot'];
+      $date=$data['date'];
+      
+  ?>
+
 
     <div class="health_style" style="margin-right: 400px;">
     <img src="https://image.flaticon.com/icons/svg/3090/3090660.svg" alt="Avatar" style="width:100%;">
@@ -96,9 +109,10 @@ div.click {
 
    <div class="health_style corona" style="margin-left: 400px;">
     <img src="https://www.flaticon.com/premium-icon/icons/svg/2981/2981554.svg" alt="Avatar" class="right" style="width:100%;">
-    <p id ="message"><?php echo $utmsmart;?></p>
+    <p id ="message"><?php echo $healthbot;?></p>
     <span class="time-left"><?php echo $date;?></span>
   </div>
+  <?php } ?>
   <div class="click">
     <div class="row">
        <div class="col-md-12">
