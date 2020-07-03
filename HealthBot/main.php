@@ -114,6 +114,20 @@ div.click {
   </div>
   </span>
   <br/>
-
+  <script type="text/javascript">
+  function send(){
+    var text=$('#msg').val().toLowerCase();
+    
+     $.ajax({
+                type:"post",
+                url:"search.php",
+                data:{text:text},
+                success:function(data){
+                    //alert(data);
+                    $('#ref').load(' #ref');
+                }
+      });
+  }
+</script>
     </body>
 </html>
