@@ -24,11 +24,59 @@
             <nav>
                 <h1> COVID CARE</h1>
             </nav>
-            <div class="">
+            <div class="container">
                 <h3> Outbreak World</h3>
-                <table id="list" class="case list" > </table>
+                <table id="listtable" class="table table-striped table-bordered w-100" > </table>
             </div>
+           
+<script>
+    axios.get('https://api.thevirustracker.com/free-api?countryTotals=ALL').then(function (response) {
+            var rawList = arrList(response.data.countryitems[0]);
+            myTable(rawList);
+        }).catch(function (error) {
+            console.log(error); // For Exceotion Handeling
+        })
+        function arrList(objList) {
+            var arrayList = Object.keys(objList).map(function(key) {
+                return objList[key]
+            });
+            return myData(arrayList);
+        }
 
+        function myData(data) {
+            var list = [];
+            data.forEach(function(item) {
+                list.push([
+                    item.title,
+                    item.total_cases,
+                    item.total_new_cases_today,
+                    item.total_deaths,
+                    item.total_recovered,
+                    item.total_active_cases,
+                    
+                    
+                ]);
+            });
+            console.log(list.slice(0, 182));
+            return list.slice(0, 182);
+        }
+        function myTable(dataSet) {
+            var myDataTable = $('#listtable').DataTable({
+                data: dataSet,
+                columns: [
+                    { title: "Countries and territories" },
+                    { title: "Cases" },
+                    { title: "New Cases Today" },
+                    { title: "Deaths" },
+                    { title: "Recoveries" },
+                    { title: "Active" }
+                ],
+                order: [[ 1, "desc" ]]
+            });
+            return myDataTable;
+        }
+</script>
         </header>
+        
     </body>
 </html>
