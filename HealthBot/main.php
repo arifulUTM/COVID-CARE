@@ -6,7 +6,7 @@
     <head>
         <title> HealthBot</title>
 
-    </head>
+</head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -82,12 +82,11 @@ div.click {
 }
 
     </style>
-
     <body>
 
-        <id="ref">
+        <span id="ref">
             <div class="square">
-            <center><h2>Health Tips Bot</h2></center>
+            <center><h2> COVID CARE HEALTH TIPS BOT </h2></center>
             </div>
             <br/>
             <?php 
