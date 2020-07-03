@@ -4,6 +4,11 @@
         <title> HealthBot</title>
 
     </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style>
         body {
   margin: 0 auto;
@@ -63,6 +68,15 @@
   border: 2px solid #dedede;
   
 }
+div.click {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  margin-top: 200px;
+  background-color: #ddd;
+  padding: 10px 0 0 10px;
+  font-size: 20px;
+}
 
     </style>
 
@@ -85,6 +99,21 @@
     <p id ="message"><?php echo $utmsmart;?></p>
     <span class="time-left"><?php echo $date;?></span>
   </div>
+  <div class="click">
+    <div class="row">
+       <div class="col-md-12">
+         <div class="input-group mb-3">
+            <input type="text" class="form-control" id="msg">
+              <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" onclick="send()">Send</button>
+              </div>
+          </div>
+     </div>
+    </div>
+  </div>
+  </div>
+  </span>
+  <br/>
 
     </body>
 </html>
