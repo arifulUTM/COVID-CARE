@@ -12,7 +12,7 @@ $count = mysqli_num_rows($query);
 
     if($count=="0"){
        
-        $data = "I am Sorry! Please ask relevant question or correct format";
+        $data = " Please visit here for detailed: https://www.who.int/ or http://www.myhealth.gov.my/en/";
         $query4=mysqli_query($con,"insert into chats(user,healthbot,date)values('$msg','$data','$server_time')");
        
     }else{
