@@ -3,12 +3,7 @@ This is the question this chatbot system needs to ask. However, our system is no
 
 
 
-
-
-
-
-
-Hi 
+Hi
 Hello
 What is CoronaVirus?
 What is COVID 19?
